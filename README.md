@@ -11,6 +11,7 @@ Can currently:
 - List all fighters that belong to a player
 - Create new fighters
 
+# API Documentation
 # Fighter
 The fighter.
 
