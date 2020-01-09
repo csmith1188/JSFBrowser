@@ -54,7 +54,7 @@ List all of the players on the server.
 
 <b>GET</b> /player/{player}
 
-Search for a player with the specified name.
+Search for a specific {player}.
 
 ### Path Parameters
 
