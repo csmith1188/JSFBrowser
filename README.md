@@ -11,27 +11,32 @@ Can currently:
 - List all fighters that belong to a player
 - Create new fighters
 
-Look, I said it did it. Not did it well.
-
 # Fighter
 The fighter.
 
 ## Methods
 <b>POST</b> /search
 
-Searches for a specific fighter.
+Search for fighters.
 
-<b>POST</b> /add {fightername}{fighterID}
+<b>POST</b> /add
 
-Creates a new fighter with the specified name and ID.
+Create a fighter with the specified name and ID.
+
+### Body Parameters
+
+Parameter | Required/Optional | Data Type
+------------ | ------------- | -------------
+fightername | Required | String
+fighterID | Required | Integer
 
 <b>GET</b> /list/fighters
 
-Lists all of the fighters on the server.
+List all of the fighters on the server.
 
 <b>GET</b> /fighter/{fighterUID}
 
-Searches for a fighter with the specified ID.
+Search for a fighter with the specified <b>{fighterUID}</b>.
 
 # Player
 The player.
@@ -39,8 +44,8 @@ The player.
 ## Methods
 <b>GET</b> /list/players
 
-Lists all of the players on the server.
+List all of the players on the server.
 
 <b>GET</b> /player/{player}
 
-Searches for a player with the specified name.
+Search for a player with the specified name.
