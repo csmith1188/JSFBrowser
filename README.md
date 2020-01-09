@@ -20,7 +20,9 @@ The fighter.
 
 Search for fighters.
 
-<b>POST</b> /add
+<br>
+
+<b>POST</b> /fighter
 
 Create a fighter with the specified name and ID.
 
@@ -31,11 +33,50 @@ Parameter | Required/Optional | Data Type | Description
 fightername | Required | String | The fighter name.
 fighterID | Required | Integer | The fighter ID.
 
-<b>GET</b> /list/fighters
+<br>
+
+<b>GET</b> /fighter/list
 
 List all of the fighters on the server.
 
-<b>GET</b> /fighter/{fighterUID}
+### Sample Response
+
+[
+    {
+        "fighter_UID": 1,
+        "fighter_name": "SMC",
+        "fighter_player_UID": 3,
+        "stat_atk": 5,
+        "stat_def": 5,
+        "stat_tek": 5,
+        "rec_wins": 0,
+        "rec_losses": 0
+    },
+    {
+        "fighter_UID": 2,
+        "fighter_name": "undefined",
+        "fighter_player_UID": "undefined",
+        "stat_atk": 5,
+        "stat_def": 5,
+        "stat_tek": 5,
+        "rec_wins": 0,
+        "rec_losses": 0
+    },
+    {
+        "fighter_UID": 3,
+        "fighter_name": "aaron",
+        "fighter_player_UID": "undefined",
+        "stat_atk": 5,
+        "stat_def": 5,
+        "stat_tek": 5,
+        "rec_wins": 0,
+        "rec_losses": 0
+    }
+]
+
+<br>
+
+<b>GET</b> /fighter/show/{fighterUID}
 
 Search for a fighter with the specified <b>{fighterUID}</b>.
 
@@ -43,22 +84,73 @@ Search for a fighter with the specified <b>{fighterUID}</b>.
 
 Parameter | Required/Optional | Data Type | Description
 ------------ | ------------- | ------------- | -------------
-fighterUID | Required | Integer | The fighter UID.
+fighterUID | Required | Integer | The fighter UID. Min is 1.
+
+### Sample Request
+
+/fighter/show/<b>1</b>
+
+### Sample Response
+
+{
+    "fighter_UID": 1,
+    "fighter_name": "SMC",
+    "fighter_player_UID": 3,
+    "stat_atk": 5,
+    "stat_def": 5,
+    "stat_tek": 5,
+    "rec_wins": 0,
+    "rec_losses": 0,
+    "player_UID": 3,
+    "player_name": "Mr. Smith"
+}
 
 # Player
 The player.
 
 ## Methods
-<b>GET</b> /list/players
+<b>GET</b> /player/list
 
 List all of the players on the server.
 
-<b>GET</b> /player/{player}
+### Sample Response
 
-Search for a specific {player}.
+[
+    {
+        "player_UID": 3,
+        "player_name": "Mr. Smith"
+    }
+]
+
+<br>
+
+<b>GET</b> /player/show/{playerUID}
+
+Search for a player with the specified {playerUID}.
 
 ### Path Parameters
 
 Parameter | Required/Optional | Data Type | Description
 ------------ | ------------- | ------------- | -------------
-player | Required | String | The player name.
+player | Required | Integer | The player UID. Min is 1.
+
+### Sample Request
+
+/player/show/<b>3</b>
+
+### Sample Response
+
+[
+    {
+        "fighter_UID": 1,
+        "fighter_name": "SMC",
+        "fighter_player_UID": 3,
+        "stat_atk": 5,
+        "stat_def": 5,
+        "stat_tek": 5,
+        "rec_wins": 0,
+        "rec_losses": 0,
+        "player_UID": 3,
+        "player_name": "Mr. Smith"
+    }
+]
