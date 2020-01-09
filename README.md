@@ -20,6 +20,8 @@ The fighter.
 
 Search for fighters.
 
+<br>
+
 <b>POST</b> /fighter
 
 Create a fighter with the specified name and ID.
@@ -30,6 +32,8 @@ Parameter | Required/Optional | Data Type | Description
 ------------ | ------------- | ------------- | -------------
 fightername | Required | String | The fighter name.
 fighterID | Required | Integer | The fighter ID.
+
+<br>
 
 <b>GET</b> /fighter/list
 
@@ -70,6 +74,8 @@ List all of the fighters on the server.
     }
 ]
 
+<br>
+
 <b>GET</b> /fighter/show/{fighterUID}
 
 Search for a fighter with the specified <b>{fighterUID}</b>.
@@ -79,6 +85,10 @@ Search for a fighter with the specified <b>{fighterUID}</b>.
 Parameter | Required/Optional | Data Type | Description
 ------------ | ------------- | ------------- | -------------
 fighterUID | Required | Integer | The fighter UID. Min is 1.
+
+### Sample Request
+
+/fighter/show/<b>1</b>
 
 ### Sample Response
 
@@ -112,6 +122,8 @@ List all of the players on the server.
     }
 ]
 
+<br>
+
 <b>GET</b> /player/show/{playerUID}
 
 Search for a player with the specified {playerUID}.
@@ -120,7 +132,11 @@ Search for a player with the specified {playerUID}.
 
 Parameter | Required/Optional | Data Type | Description
 ------------ | ------------- | ------------- | -------------
-player | Required | Integer | The player UID.
+player | Required | Integer | The player UID. Min is 1.
+
+### Sample Request
+
+/player/show/<b>3</b>
 
 ### Sample Response
 
